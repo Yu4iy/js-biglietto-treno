@@ -1,12 +1,19 @@
-// esercizio di oggi: calcolo del prezzo del biglietto del treno
-// cartella/repo: js-biglietto-treno
-// DESCRIZIONE
-// Il programma dovrà chiedere all’utente il numero di chilometri che vuole percorrere e l’età del passeggero.
-// Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio, secondo queste regole:
-// - il prezzo del biglietto è definito in base ai km (0.21 € al km)
-// - va applicato uno sconto del 20% per i minorenni
-// - va applicato uno sconto del 40% per gli over 65.
-// L’output del prezzo finale va scritto in forma umana (con massimo due decimali, per indicare centesimi sul prezzo). Questo richiederà un minimo di ricerca.
-// Di nuovo buon lavoro, a domani
-let test = 'hello'
-console.log(test)
+
+let distance = parseInt(prompt('Indica numero di chilometri che vuole percorrere'))
+	if (isNaN(distance)){
+		alert('numero di chilometri indicato di defolt 1km')
+		distance = 1
+	}
+
+let age = parseInt(prompt('Indicare l’età del passeggero'))
+	if (isNaN(age)){
+		alert('Valore sbagliato aggiorna la pagina e riprova')
+}
+
+let price = distance * 1;
+	if (age < 18) {
+		price = price * 80 / 100
+	}	else if (age > 60) {
+		price = price * 60 / 100
+	}
+	alert(`DA PAGARE ${(parseInt(price * 100)) / 100}`); 

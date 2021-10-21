@@ -10,7 +10,7 @@ let age = parseInt(prompt('Indicare l’età del passeggero'))
 		alert('Valore sbagliato aggiorna la pagina e riprova')
 }
 
-let price = distance * 1;
+let price = distance * 0.21;
 	if (age < 18) {
 		price = price * 80 / 100
 	}	else if (age > 60) {

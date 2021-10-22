@@ -6,8 +6,71 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>calcolo del prezzo del biglietto del treno</title>
 	<link rel="stylesheet" href="./css/style.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 </head>
 <body>
+	<header class="my-5 text-center">
+		<h1>Calcola il Prezo del biglietto</h1>
+	</header>
+	<main>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<label for="nome" class="form-label">
+						Nome e Cognome
+					</label>
+					<input id="nome" class="form-control" type="text" name="nome" placeholder="Inserisci il tuo Nome">
+				</div>
+				<div class="col">
+					<label for="km" class="form-label">
+						KM da percorrere
+					</label>
+					<input id="km" type="number" class="form-control" min="1" max="300" name="km" placeholder="inserisci i KM">
+				</div>
+				<div class="col">
+					<label for="fascia-eta" class="form-label">
+						Fascia d'età
+					</label>
+					<select name="fascia-eta" id="fascia-eta" class="form-control">
+						<option value="minorenne">Minorenne</option>
+						<option value="maggiorenne">Maggiorenne</option>
+						<option value="over65">Over65</option>
+					</select>
+				</div>
+			</div>
+			<div class="mt-5 text-center">
+				<button class="btn btn-primary me-3" id="btn-genera">Genera</button>
+				<button class="btn btn-danger" id="btn-annulla">Annulla</button>
+			</div>
+		</div>
+		<section id="biglietto" class="container my-5 d-none">
+			<h2 class="mb-3">Il tuo biglietto</h2>
+			<h3>
+				Passeggero:
+				<span id="nome-passeggero"></span>
+			</h3>
+			<div class="offerta">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Offerta</th>
+							<th>Carrozza</th>
+							<th>Codice CP</th>
+							<th>Costo</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td id="offerta-applicata"></td>
+							<td id="carrozza"></td>
+							<td id="codice-cp"></td>
+							<td id="costo"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+	</main>
 	<script src="./js/index.js"></script>
 </body>
 </html>
